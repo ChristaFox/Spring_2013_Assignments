@@ -1,0 +1,59 @@
+//Options for the combo box dialog
+		//assign array of answers to a combo box
+		//Input dialog with a combo box created by
+      //using a String array for the object message. Note how
+      //a null icon for the icon results in the QUESTION_MESSAGE
+      //message type being used.
+      String picked = (String)JOptionPane.showInputDialog(this, "Choose the author:"
+                , "Trivia Game", JOptionPane.QUESTION_MESSAGE
+                , null, choices, choices[0]);
+						
+		String[] politicsChoices = {"William Henry Harrison"};									
+		int[] score = {2, 4, 6, 8, 10};
+		
+		
+		
+		Scanner input = new Scanner(System.in);
+		int selection;
+		do
+		{
+			System.out.println("Authors = 1, Movies = 2, Songs = 3, Sports = 4, Politics = 5");
+			System.out.print("Choose a category or 0 to quit: ");
+			selection = input.nextInt();
+			switch (selection)
+			{
+				case 1:
+					TrackResponse("Selected Authors");
+					TriviaQuestions.getAuthors();
+					break;
+				case 2:
+					TrackResponse("Selected Movies");
+					TriviaQuestions.getMovies();
+					break;
+				case 3:
+					TrackResponse("Selected Songs");
+					TriviaQuestions.getSongs();
+					break;
+				case 4:
+					TrackResponse("Selected Sports");
+					TriviaQuestions.getSports();
+					break;
+				case 5:
+					TrackResponse("Selected Politics");
+					TriviaQuestions.getPolitics();
+					break;
+				case 0:
+					System.out.print("good bye");
+					break;
+			}
+			System.out.println("");
+		} while (selection != 0);
+		
+		        if (picked == "Authors")
+        {
+            tracker.append(getAuthors());
+        }
+        else
+        {
+            tracker.append("\nYou picked " + response + "..");
+        }
